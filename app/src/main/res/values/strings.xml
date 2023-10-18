@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">InventoryManager</string>
     <string name="詳細">詳細</string>
+    <string name="編集">編集</string>
+    <string name="本日_5">本日 5</string>
+    <string name="現在_1_5">現在 1.5</string>
+    <string name="message">message</string>
 </resources>
