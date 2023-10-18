@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 class ViewHolderItem(itemView:View) : RecyclerView.ViewHolder(itemView) {
     //3) View(xml)の方から、指定のidを見つけてくる
     //val ivHolder: ImageView = itemView.findViewById(R.id.iv)
-    val tvNameHolder: TextView = itemView.findViewById(R.id.tvNow)
-    val tvMessageHolder: TextView = itemView.findViewById(R.id.tvToday)
+    val tvNameHolder: TextView = itemView.findViewById(R.id.Now)
+    val tvMessageHolder: TextView = itemView.findViewById(R.id.Today)
     val btnDetails: Button = itemView.findViewById(R.id.btnDetails)
-    val tvBrandNameHolder: TextView = itemView.findViewById(R.id.tvBrandName)
-    val tvDescriptionHolder: TextView = itemView.findViewById(R.id.tvDescription)
+    val tvBrandNameHolder: TextView = itemView.findViewById(R.id.brandName)
+    val tvDescriptionHolder: TextView = itemView.findViewById(R.id.description)
     val btnEdit: Button = itemView.findViewById(R.id.btnEdit)
 
     //9)クリック処理

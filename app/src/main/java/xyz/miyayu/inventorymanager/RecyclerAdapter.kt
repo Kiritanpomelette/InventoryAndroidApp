@@ -12,7 +12,6 @@ class RecyclerAdapter(private val customList:Array<String>): RecyclerView.Adapte
     val nameList = listOf("My Name0","My Name1","My Name2","My Name3","My Name4","My Name5")
     private val messageList = listOf("My Message0","My Message1","My Message2","My Message3","My Message4","My Message5")
     private val descriptionList = listOf("りんごです","みかんです","ぶどうです","ももです","なしです","いちごです")
-    private val btnDetails = DetailsActivity()
     //4) ここで1行分のレイアウト(view)を作る
     // (「2」と「3」を紐付ける作業)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderItem {
