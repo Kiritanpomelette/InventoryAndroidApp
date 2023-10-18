@@ -5,4 +5,7 @@
     <string name="本日_5">本日 5</string>
     <string name="現在_1_5">現在 1.5</string>
     <string name="message">message</string>
+    <string name="message1">message</string>
+    <string name="Description">TextView</string>
+    <string name="BrandName">TextView</string>
 </resources>

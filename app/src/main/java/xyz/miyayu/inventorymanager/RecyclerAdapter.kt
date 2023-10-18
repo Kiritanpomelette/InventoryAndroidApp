@@ -3,18 +3,16 @@ package xyz.miyayu.inventorymanager
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerAdapter(private val customList:Array<String>): RecyclerView.Adapter<ViewHolderItem>(){
     //5)　表示するデータを用意
-    private val BrandnameList = listOf("りんご","みかん","ぶどう","もも","なし","いちご")
+    private val brandNameList = listOf("りんご","みかん","ぶどう","もも","なし","いちご")
     val nameList = listOf("My Name0","My Name1","My Name2","My Name3","My Name4","My Name5")
     private val messageList = listOf("My Message0","My Message1","My Message2","My Message3","My Message4","My Message5")
     private val descriptionList = listOf("りんごです","みかんです","ぶどうです","ももです","なしです","いちごです")
-    //private val imageList = listOf(R.drawable.img0,R.drawable.img1,R.drawable.img2,R.drawable.img3,R.drawable.img4,R.drawable.img5)
-    private val btnDetails = Details_Activity()
+    private val btnDetails = DetailsActivity()
     //4) ここで1行分のレイアウト(view)を作る
     // (「2」と「3」を紐付ける作業)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderItem {
@@ -27,11 +25,10 @@ class RecyclerAdapter(private val customList:Array<String>): RecyclerView.Adapte
         override fun onBindViewHolder(holder: ViewHolderItem, position: Int) {
             holder.tvNameHolder.text = nameList[position]
             holder.tvMessageHolder.text = messageList[position]
-            //holder.ivHolder.setImageResource(imageList[position])
             holder.tvDescriptionHolder.text = descriptionList[position]
-            holder.tvBrandNameHolder.text = BrandnameList[position]
+            holder.tvBrandNameHolder.text = brandNameList[position]
             holder.btnDetails.setOnClickListener {
-                val intent = Intent(holder.btnDetails.context, Details_Activity::class.java)
+                val intent = Intent(holder.btnDetails.context, DetailsActivity::class.java)
                 ContextCompat.startActivity(holder.btnDetails.context, intent, null)
             }
             holder.btnEdit.setOnClickListener {
