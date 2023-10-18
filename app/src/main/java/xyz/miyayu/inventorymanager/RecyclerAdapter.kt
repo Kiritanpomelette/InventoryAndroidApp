@@ -6,37 +6,48 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapter(private val customList:Array<String>): RecyclerView.Adapter<ViewHolderItem>(){
-    //5)　表示するデータを用意
-    private val brandNameList = listOf("りんご","みかん","ぶどう","もも","なし","いちご")
-    val nameList = listOf("My Name0","My Name1","My Name2","My Name3","My Name4","My Name5")
-    private val messageList = listOf("My Message0","My Message1","My Message2","My Message3","My Message4","My Message5")
-    private val descriptionList = listOf("りんごです","みかんです","ぶどうです","ももです","なしです","いちごです")
-    //4) ここで1行分のレイアウト(view)を作る
+class RecyclerAdapter(private val customList: Array<String>) :
+    RecyclerView.Adapter<ViewHolderItem>() {
+    // 5)　表示するデータを用意
+    private val brandNameList = listOf("りんご", "みかん", "ぶどう", "もも", "なし", "いちご")
+    val nameList = listOf("My Name0", "My Name1", "My Name2", "My Name3", "My Name4", "My Name5")
+    private val messageList = listOf(
+        "My Message0",
+        "My Message1",
+        "My Message2",
+        "My Message3",
+        "My Message4",
+        "My Message5"
+    )
+    private val descriptionList = listOf("りんごです", "みかんです", "ぶどうです", "ももです", "なしです", "いちごです")
+
+    // 4) ここで1行分のレイアウト(view)を作る
     // (「2」と「3」を紐付ける作業)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderItem {
-        //「2」のレイアウトを取得(インフレート)
+        // 「2」のレイアウトを取得(インフレート)
         val itemXml = LayoutInflater.from(parent.context)
             .inflate(R.layout.one_layout, parent, false)
         return ViewHolderItem(itemXml)
     }
-        //5) position番目のデータをレイアウト(xml)に表示させるようにセット
-        override fun onBindViewHolder(holder: ViewHolderItem, position: Int) {
-            holder.tvNameHolder.text = nameList[position]
-            holder.tvMessageHolder.text = messageList[position]
-            holder.tvDescriptionHolder.text = descriptionList[position]
-            holder.tvBrandNameHolder.text = brandNameList[position]
-            holder.btnDetails.setOnClickListener {
-                val intent = Intent(holder.btnDetails.context, DetailsActivity::class.java)
-                ContextCompat.startActivity(holder.btnDetails.context, intent, null)
-            }
-            holder.btnEdit.setOnClickListener {
-                val intent = Intent(holder.btnEdit.context, EditActivity::class.java)
-                ContextCompat.startActivity(holder.btnEdit.context, intent, null)
-            }
+
+    // 5) position番目のデータをレイアウト(xml)に表示させる        ようにセット
+    override fun onBindViewHolder(holder: ViewHolderItem, position: Int) {
+        holder.tvNameHolder.text = nameList[position]
+        holder.tvMessageHolder.text = messageList[position]
+        holder.tvDescriptionHolder.text = descriptionList[position]
+        holder.tvBrandNameHolder.text = brandNameList[position]
+        holder.btnDetails.setOnClickListener {
+            val intent = Intent(holder.btnDetails.context, DetailsActivity::class.java)
+            ContextCompat.startActivity(holder.btnDetails.context, intent, null)
         }
-        //6) データが何件あるかを確認する
-        override fun getItemCount(): Int {
-            return nameList.size
+        holder.btnEdit.setOnClickListener {
+            val intent = Intent(holder.btnEdit.context, EditActivity::class.java)
+            ContextCompat.startActivity(holder.btnEdit.context, intent, null)
         }
     }
+
+    // 6) データが何件あるかを確認する
+    override fun getItemCount(): Int {
+        return nameList.size
+    }
+}

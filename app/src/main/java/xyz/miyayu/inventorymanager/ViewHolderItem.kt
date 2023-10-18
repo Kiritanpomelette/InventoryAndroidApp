@@ -6,9 +6,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class ViewHolderItem(itemView:View) : RecyclerView.ViewHolder(itemView) {
-    //3) View(xml)の方から、指定のidを見つけてくる
-    //val ivHolder: ImageView = itemView.findViewById(R.id.iv)
+class ViewHolderItem(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    // 3) View(xml)の方から、指定のidを見つけてくる
+    // val ivHolder: ImageView = itemView.findViewById(R.id.iv)
     val tvNameHolder: TextView = itemView.findViewById(R.id.Now)
     val tvMessageHolder: TextView = itemView.findViewById(R.id.Today)
     val btnDetails: Button = itemView.findViewById(R.id.btnDetails)
@@ -16,7 +16,7 @@ class ViewHolderItem(itemView:View) : RecyclerView.ViewHolder(itemView) {
     val tvDescriptionHolder: TextView = itemView.findViewById(R.id.description)
     val btnEdit: Button = itemView.findViewById(R.id.btnEdit)
 
-    //9)クリック処理
+    // 9)クリック処理
     private val recyclerAdapter = RecyclerAdapter(arrayOf())
     private val nameList = recyclerAdapter.nameList
 
