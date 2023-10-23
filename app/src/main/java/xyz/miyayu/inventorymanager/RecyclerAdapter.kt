@@ -36,10 +36,6 @@ class RecyclerAdapter(private val customList: Array<String>) :
         holder.tvMessageHolder.text = messageList[position]
         holder.tvDescriptionHolder.text = descriptionList[position]
         holder.tvBrandNameHolder.text = brandNameList[position]
-        holder.btnDetails.setOnClickListener {
-            val intent = Intent(holder.btnDetails.context, DetailsActivity::class.java)
-            ContextCompat.startActivity(holder.btnDetails.context, intent, null)
-        }
         holder.btnEdit.setOnClickListener {
             val intent = Intent(holder.btnEdit.context, EditActivity::class.java)
             ContextCompat.startActivity(holder.btnEdit.context, intent, null)

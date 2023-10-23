@@ -11,7 +11,6 @@ class ViewHolderItem(itemView: View) : RecyclerView.ViewHolder(itemView) {
     // val ivHolder: ImageView = itemView.findViewById(R.id.iv)
     val tvNameHolder: TextView = itemView.findViewById(R.id.Now)
     val tvMessageHolder: TextView = itemView.findViewById(R.id.Today)
-    val btnDetails: Button = itemView.findViewById(R.id.btnDetails)
     val tvBrandNameHolder: TextView = itemView.findViewById(R.id.brandName)
     val tvDescriptionHolder: TextView = itemView.findViewById(R.id.description)
     val btnEdit: Button = itemView.findViewById(R.id.btnEdit)
