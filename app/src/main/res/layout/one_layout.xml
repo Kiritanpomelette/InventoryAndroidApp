@@ -33,9 +33,10 @@
         android:id="@+id/btnEdit"
         android:layout_width="33dp"
         android:layout_height="42dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:text="@string/edit"
+        app:layout_constraintBottom_toTopOf="@+id/btnDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,4 +67,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="164dp" />
+
+    <Button
+        android:id="@+id/btnDetails"
+        android:layout_width="35dp"
+        android:layout_height="41dp"
+        android:text="在庫"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnEdit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnEdit" />
 </androidx.constraintlayout.widget.ConstraintLayout>

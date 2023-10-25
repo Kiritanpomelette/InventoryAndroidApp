@@ -14,15 +14,5 @@ class ViewHolderItem(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val tvBrandNameHolder: TextView = itemView.findViewById(R.id.brandName)
     val tvDescriptionHolder: TextView = itemView.findViewById(R.id.description)
     val btnEdit: Button = itemView.findViewById(R.id.btnEdit)
-
-    // 9)クリック処理
-    private val recyclerAdapter = RecyclerAdapter(arrayOf())
-    private val nameList = recyclerAdapter.nameList
-
-    init {
-        itemView.setOnClickListener {
-            val position: Int = adapterPosition
-            Toast.makeText(itemView.context, "${nameList[position]}さんです", Toast.LENGTH_SHORT).show()
-        }
-    }
+    val btnDatails : Button = itemView.findViewById(R.id.btnDetails)
 }
