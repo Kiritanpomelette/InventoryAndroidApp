@@ -1,12 +1,11 @@
 package xyz.miyayu.inventorymanager.model
 
+import java.util.Date
+
 data class Product(
     val name: String,
     val now: Int,
-    val today: Int,
-    val week: Int,
-    val month: Int,
+    val date: Date,
     val memo: String,
-    val data: Int,
-    val id : Int
+    val id: Int
 )

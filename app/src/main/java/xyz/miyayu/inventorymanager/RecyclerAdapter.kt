@@ -36,16 +36,13 @@ class RecyclerAdapter(private val customList: List<Product>) :
             val intent = Intent(holder.btnEdit.context, EditActivity::class.java)
             intent.putExtra("name",customList[position].name)
             intent.putExtra("now",customList[position].now)
-            intent.putExtra("id",customList[position].month)
             ContextCompat.startActivity(holder.btnEdit.context, intent, null)
         }
         holder.btnDatails.setOnClickListener {
             val intent = Intent(holder.btnDatails.context,DetailsActivity::class.java)
             intent.putExtra("name",customList[position].name)
             intent.putExtra("now",customList[position].now)
-            intent.putExtra("today",customList[position].today)
-            intent.putExtra("week",customList[position].week)
-            intent.putExtra("month",customList[position].month)
+            intent.putExtra("date",customList[position].date)
             intent.putExtra("memo",customList[position].memo)
             ContextCompat.startActivity(holder.btnDatails.context,intent,null)
         }

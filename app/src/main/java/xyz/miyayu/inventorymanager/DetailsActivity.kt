@@ -19,9 +19,9 @@ class DetailsActivity : AppCompatActivity() {
 
         val id = intent.getStringExtra("name")
         val now = intent.getIntExtra("now",0)
-        val today = intent.getIntExtra("today",0)
-        val week = intent.getIntExtra("week",0)
-        val month = intent.getIntExtra("month",0)
+        val today = intent.getIntExtra("date",0)
+        val week = intent.getIntExtra("date",0)
+        val month = intent.getIntExtra("date",0)
         val memo = intent.getStringExtra("memo")
 
         tvname.text = id.toString()
