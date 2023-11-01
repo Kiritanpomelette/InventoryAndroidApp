@@ -10,7 +10,6 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.details_layout)
 
-
         val tvname : TextView = findViewById(R.id.name)
         val tvnow : TextView = findViewById(R.id.now)
         val tvtoday : TextView = findViewById(R.id.today)
@@ -31,6 +30,5 @@ class DetailsActivity : AppCompatActivity() {
         tvweek.text = week.toString()
         tvmonth.text = month.toString()
         tvmemo.text = memo.toString()
-
     }
 }

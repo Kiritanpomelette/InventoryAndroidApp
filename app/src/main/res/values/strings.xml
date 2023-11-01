@@ -6,4 +6,5 @@
     <string name="BrandName">TextView</string>
     <string name="edit">編集</string>
     <string name="details">詳細</string>
+    <string name="textview">TextView</string>
 </resources>

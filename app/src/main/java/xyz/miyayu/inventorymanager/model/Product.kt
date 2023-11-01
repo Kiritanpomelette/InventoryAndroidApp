@@ -6,5 +6,7 @@ data class Product(
     val today: Int,
     val week: Int,
     val month: Int,
-    val memo: String
+    val memo: String,
+    val data: Int,
+    val id : Int
 )
