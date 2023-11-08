@@ -40,10 +40,7 @@ class RecyclerAdapter(private val customList: List<Product>) :
         }
         holder.btnDatails.setOnClickListener {
             val intent = Intent(holder.btnDatails.context,DetailsActivity::class.java)
-            intent.putExtra("name",customList[position].name)
-            intent.putExtra("now","不明")
-            intent.putExtra("date",customList[position].date)
-            intent.putExtra("memo",customList[position].memo)
+            intent.putExtra("id",customList[position].id)
             ContextCompat.startActivity(holder.btnDatails.context,intent,null)
         }
     }

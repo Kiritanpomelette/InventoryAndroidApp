@@ -12,6 +12,7 @@ import java.util.Date
 
 interface InventoryRepository {
     fun getAllData(): List<Product>
+    fun getProduct(id: String): Product
 }
 
 object InventoryRepositoryImpl : InventoryRepository {
@@ -20,6 +21,31 @@ object InventoryRepositoryImpl : InventoryRepository {
             try {
                 //ここでURLを指定する
                 val url = URL("https://n3.miyayu.xyz/InventoryServer-0.0.1-SNAPSHOT-plain/products")
+                //接続する
+                val connection = (url.openConnection() as HttpURLConnection).apply {
+                    connect()
+                }
+
+                //接続先からデータを持ってくる
+                val text = connection.inputStream.bufferedReader().readText()
+
+                //データオブジェクトに変換する
+                return@runBlocking Json {
+                    ignoreUnknownKeys = true
+                    encodeDefaults = true
+                    coerceInputValues = true
+                }.decodeFromString(text)
+            } catch (e: Exception) {
+                throw e
+            }
+        }
+    }
+
+    override fun getProduct(id: String): Product {
+        return runBlocking(Dispatchers.IO) {//非同期通信をするためのおまじない（本当はよくないけど仮）
+            try {
+                //ここでURLを指定する
+                val url = URL("https://n3.miyayu.xyz/InventoryServer-0.0.1-SNAPSHOT-plain/products/selectID?id=${id}")
                 //接続する
                 val connection = (url.openConnection() as HttpURLConnection).apply {
                     connect()
@@ -54,5 +80,9 @@ object FakeInventoryRepository : InventoryRepository {
 
     override fun getAllData(): List<Product> {
         return fakeProducts
+    }
+
+    override fun getProduct(id: String): Product {
+        TODO("Not yet implemented")
     }
 }

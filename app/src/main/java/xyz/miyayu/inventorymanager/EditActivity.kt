@@ -25,8 +25,6 @@ class EditActivity : AppCompatActivity() {
         val id = intent.getStringExtra("name")
         val now = intent.getIntExtra("now",0)
 
-
-
         tvname.text = id.toString()
         tvnow.text = now.toString()
 
