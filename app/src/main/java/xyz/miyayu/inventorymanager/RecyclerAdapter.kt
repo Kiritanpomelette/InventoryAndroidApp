@@ -26,7 +26,7 @@ class RecyclerAdapter(private val customList: List<Product>) :
 
         holder.tvNameHolder.text = product.name
 
-        holder.tvMessageHolder.text = product.now.toString()
+        holder.tvMessageHolder.text = "不明" //product.now.toString()
 
         holder.tvDescriptionHolder.text = product.memo
 
@@ -35,13 +35,13 @@ class RecyclerAdapter(private val customList: List<Product>) :
         holder.btnEdit.setOnClickListener {
             val intent = Intent(holder.btnEdit.context, EditActivity::class.java)
             intent.putExtra("name",customList[position].name)
-            intent.putExtra("now",customList[position].now)
+            intent.putExtra("now","不明")
             ContextCompat.startActivity(holder.btnEdit.context, intent, null)
         }
         holder.btnDatails.setOnClickListener {
             val intent = Intent(holder.btnDatails.context,DetailsActivity::class.java)
             intent.putExtra("name",customList[position].name)
-            intent.putExtra("now",customList[position].now)
+            intent.putExtra("now","不明")
             intent.putExtra("date",customList[position].date)
             intent.putExtra("memo",customList[position].memo)
             ContextCompat.startActivity(holder.btnDatails.context,intent,null)
