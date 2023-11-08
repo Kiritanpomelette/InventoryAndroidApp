@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import xyz.miyayu.inventorymanager.repository.FakeTreasurerRepository
+import xyz.miyayu.inventorymanager.repository.TreasurerRepository
+import xyz.miyayu.inventorymanager.repository.TreasurerRepositoryImpl
 
 class EditActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +25,7 @@ class EditActivity : AppCompatActivity() {
 
 
         val id = intent.getStringExtra("name")
-        val now = intent.getIntExtra("now",0)
+        val now = intent.getIntExtra("now",11)
 
         tvname.text = id.toString()
         tvnow.text = now.toString()
@@ -32,9 +34,10 @@ class EditActivity : AppCompatActivity() {
             if (textfi.text.isNullOrEmpty() ){
                 Toast.makeText(this,"入力してください",Toast.LENGTH_SHORT).show()
             }else{
-                FakeTreasurerRepository.insertTreasurer(
+                TreasurerRepositoryImpl.insertTreasurer(
                     productId = 1, managerId = 1, count = textField.text.toString().toInt()
                 )
+
                 val text = "保存されました"
                 val duration = Toast.LENGTH_SHORT
                 val toast = Toast.makeText(this,text,duration)

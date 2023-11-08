@@ -65,7 +65,6 @@ object InventoryRepositoryImpl : InventoryRepository {
             }
         }
     }
-
 }
 
 //ボスがいなくても動くコード
