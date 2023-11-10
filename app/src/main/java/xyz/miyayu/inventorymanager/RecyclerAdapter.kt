@@ -24,8 +24,6 @@ class RecyclerAdapter(private val customList: List<Product>) :
     override fun onBindViewHolder(holder: ViewHolderItem, position: Int) {
         val product = customList[position]
 
-        holder.tvNameHolder.text = product.name
-
         holder.tvMessageHolder.text = "不明" //product.now.toString()
 
         holder.tvDescriptionHolder.text = product.memo
